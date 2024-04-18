@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  dashboard:
+    image: '${DOCKER_IMAGE}'
+    restart: unless-stopped
+    ports:
+      - 3005:80
+    networks:
+      - e_commerce_us_network
+    depends_on:
+      - api
+
+networks:
+  e_commerce_us_network:
+    driver: overlay
+    attachable: true

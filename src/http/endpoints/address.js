@@ -1,0 +1,8 @@
+export const USER_API_PREFIX = '/member/v1/users'
+
+export const GET_ADDRESS_SAVED_ENDPOINT = `${USER_API_PREFIX}/address`
+export const GET_ADDRESS_SAVED_DETAIL_ENDPOINT = `${USER_API_PREFIX}/address`
+export const CREATE_ADDRESS_SAVED_ENDPOINT = `${USER_API_PREFIX}/address`
+export const UPDATE_ADDRESS_SAVED_ENDPOINT = `${USER_API_PREFIX}/address`
+export const UPDATE_DEFAULT_ADDRESS_SAVED_ENDPOINT = `${USER_API_PREFIX}/changeDefault`
+export const DELETE_ADDRESS_SAVED_ENDPOINT = `${USER_API_PREFIX}/address`

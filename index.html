@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="google-site-verification"
+      content="2UmB5enbtRRy2J4HKjHb0Y6ZGNuPIXK_N5Yid60HGcw"
+    />
+    <title>Riman HK</title>
+    <meta name="description" content="Riman HK" />
+    <link
+      rel="apple-touch-icon"
+      href="/pwa-icon/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link rel="mask-icon" href="/pwa-icon/mask-icon.svg" color="#FFFFFF" />
+    <meta name="theme-color" content="#04263F" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js?ver=0.1.1"></script>
+    <!-- //TODO Google Tag Manager -->
+    <!-- <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-W7T77KVJ')
+    </script> -->
+    <!-- End Google Tag Manager -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+      }
+    </script>
+  </body>
+</html>

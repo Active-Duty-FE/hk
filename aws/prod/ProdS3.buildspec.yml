@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16.x
+    commands:
+      - echo start [Prod branch]
+      - echo Insatlling NPM Packages and wget Enviorment File
+  pre_build:
+    commands:
+      - node -v
+      - npm -v
+      - npm i -g yarn
+      - yarn -v
+      - yarn install
+  build:
+    commands:
+      - echo npm build start `date`
+      - yarn run build-prod
+      - echo Build completed on `date`
+  post_build:
+    commands:
+      - echo Copy Vue.js Build File
+      - zip -r prod-mars-front-hk.zip ./*
+      - echo "packaging done"
+      # zip파일을 S3로 업로드
+      - echo "uploading prod-mars-front-hk.zip to S3..."
+      - aws s3 cp prod-mars-front-hk.zip s3://hk-prod-source-deploy/mars-front/ --acl bucket-owner-full-control
+      - echo "upload done"

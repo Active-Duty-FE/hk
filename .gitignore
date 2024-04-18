@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+.idea
+
+*.local
+.env
+.env.stg
+.env.prod
+analyse.html
+.husky
+.scannerwork
+sonar-project.properties
+src/assets

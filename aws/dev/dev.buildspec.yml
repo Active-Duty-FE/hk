@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16.x
+    commands:
+      - echo start [Dev branch]
+      - echo Insatlling NPM Packages and wget Enviorment File
+  pre_build:
+    commands:
+      #      - node -v
+      #      - npm -v
+      #      - npm install
+      - ls -al
+  #  build:
+  #    commands:
+  #      - echo npm build start `date`
+  #      - npm run build-dev
+  post_build:
+    commands:
+      - ls -al
+      - echo Copy Vue.js Build File
+      - aws s3 rm s3://dev-mall.dev.riman.com.hk/ --recursive
+      - aws s3 cp --recursive dist/ s3://dev-mall.dev.riman.com.hk
+      - echo cloudfront cache invalidation.
+      - aws cloudfront create-invalidation --distribution-id EHQWLGH34ZR32 --paths "/*"
+      - echo Build completed on `date`

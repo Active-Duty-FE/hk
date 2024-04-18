@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Page Infomation -->
+    <title>리만코리아 공식 온라인 몰</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <link rel="stylesheet" href="<%= BASE_URL %>parking/parking.css" />
+  </head>
+
+  <body>
+    <div class="maintenance-layout">
+      <img alt="parking" src="<%= BASE_URL %>parking/parking.png" />
+      <h1>시스템 <strong>점검중</strong>입니다</h1>
+      <h2>더 나은 서비스를 위해 시스템 점검을 진행합니다.</h2>
+      <div class="divider"></div>
+      <p>점검일시 : <%= process.env.VUE_APP_SERVER_PARKING_DATE %></p>
+    </div>
+  </body>
+</html>

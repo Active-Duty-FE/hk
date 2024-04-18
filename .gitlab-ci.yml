@@ -1,0 +1,24 @@
+stages:
+  - analysis
+# NTQ Code Analysis Jobs For CICD #
+analysis:
+  stage: analysis
+  image: registry.ntq.solutions/other/sonar-scanner-cli:latest
+  script:
+    - >-
+      sonar-scanner
+      -Dsonar.projectKey="riman-global-platform-e-commerce-hk-mars-front-hk"
+      -Dsonar.projectName="[Riman Global Platform] [E-commerce-HK] mars-front-hk"
+      -Dsonar.qualitygate.wait=true
+  only:
+    - develop
+    - develop_ntq
+    - config/cicd
+    - merge_requests
+    - master
+
+  tags:
+    - cluster
+    - global
+    - linux
+    - shared
